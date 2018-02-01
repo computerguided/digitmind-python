@@ -63,6 +63,9 @@ def do_computer_move(combinations_left, difficulty_level):
     
     return score
 
+# Main program
+
+print("\n---- Digitmind ----\n")
 
 difficulty_level = int(input("Give the difficulty level [1..7]: "))
 
