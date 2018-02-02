@@ -83,14 +83,12 @@ while score['correct position'] != 4:
 print("\nCorrect! Well done!")
 
 # Computer codebreaker
+
+print("\nOk, now it's my turn. Choose a code and I'll try to break it!\n")
+
 combinations = create_combinations(difficulty_level)
 score = {'correct position':0, 'wrong position':0}
 while score['correct position'] != 4:
     score = do_computer_move(combinations, difficulty_level)
         
 print('YES!')
-
-
-
-
-
