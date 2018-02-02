@@ -1,8 +1,7 @@
 import random
 
 def create_combinations(difficulty_level):
-    digits = [1,2,3,4,5,6,7,8,9,0]
-    digits = digits[:difficulty_level+3]
+    digits = [1,2,3,4,5,6,7,8,9,0][:difficulty_level+3]
     return [(w, x, y, z)        \
         for w in digits         \
         for x in digits         \
@@ -69,7 +68,7 @@ print("\n---- Digitmind ----\n")
 
 difficulty_level = int(input("Give the difficulty level [1..7]: "))
 
-# Human code breaker
+# Human codebreaker
 combinations = create_combinations(difficulty_level)
 code = random.choice(combinations)
 
@@ -83,7 +82,7 @@ while score['correct position'] != 4:
 
 print("\nCorrect! Well done!")
 
-# Computer code breaker
+# Computer codebreaker
 combinations = create_combinations(difficulty_level)
 score = {'correct position':0, 'wrong position':0}
 while score['correct position'] != 4:
