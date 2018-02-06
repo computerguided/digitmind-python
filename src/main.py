@@ -4,7 +4,7 @@ from score_calculators import *
 
 def create_combinations(difficulty_level):
     digits = [1,2,3,4,5,6,7,8,9,0][:difficulty_level+3]
-    return [(w, x, y, z)        \
+    return [(w,x,y,z)           \
         for w in digits         \
         for x in digits         \
         for y in digits         \

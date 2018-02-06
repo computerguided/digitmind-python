@@ -1,10 +1,8 @@
 
 class ScoreCalculator:
-    
-    score = 0
-    
+        
     def __init__(self):
-        self.reset_score()
+        self.score = {'correct position':0, 'wrong position':0}
         
     def reset_score(self):
         self.score = {'correct position':0, 'wrong position':0}
@@ -32,6 +30,7 @@ class ScoreCalculator:
 
     
 class DifferenceScoreCalculator(ScoreCalculator):
+    
     def reset_score(self):
         self.score = 99
     
