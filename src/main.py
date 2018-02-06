@@ -51,9 +51,6 @@ code = random.choice(combinations)
 
 print("\nOk, I’ve chosen a code, try to guess it!\n")
 
-print(code)
-
-
 while not score_calculator.right_guess():
     guess = [int(c) for c in input("Your next guess: ") ]
     score_calculator.score = score_calculator.determine_score(guess, code)
