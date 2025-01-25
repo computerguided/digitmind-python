@@ -3,7 +3,7 @@
 ![python](img/python.png)
 
 
-Around June 2023, the scripting language [Python](https://www.python.org/) rose to the 1st place of the [TIOBE Programming Community](https://www.tiobe.com/tiobe-index) index and stayed there ever since.
+Around June 2023, the scripting language [Python](https://www.python.org/) rose to the 1st place of the [TIOBE Programming Community index](https://www.tiobe.com/tiobe-index) and stayed there ever since.
 
 ![index](img/index.png)
 
