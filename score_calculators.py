@@ -8,9 +8,9 @@ class ScoreCalculator:
         self.score = {'correct position':0, 'wrong position':0}
         
     def input_score(self):
-        self.score['correct position'] = int(input('How many on the correct position? '))
+        self.score['correct position'] = int(input('How many in the correct position? '))
         if not self.is_score_correct():
-            self.score['wrong position'] = int(input('How many on the wrong position? '))
+            self.score['wrong position'] = int(input('How many in the wrong position? '))
         
     def determine_score(self, guess, code):          
         pairwise = zip(guess, code)            
