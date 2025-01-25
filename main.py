@@ -49,7 +49,7 @@ difficulty_level = set_difficulty_level()
 combinations = create_combinations(difficulty_level)
 code = random.choice(combinations)
 
-print("\nOk, I’ve chosen a code, try to guess it!\n")
+print("\nOk, I've chosen a code, try to guess it!\n")
 
 while not score_calculator.right_guess():
     guess = [int(c) for c in input("Your next guess: ") ]
