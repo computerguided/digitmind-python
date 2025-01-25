@@ -1,4 +1,15 @@
 
+def input_integer(prompt: str, min_value: int, max_value: int) -> int:
+    while True:
+        try:
+            value = int(input(prompt))
+            if min_value <= value <= max_value:
+                return value
+            else:
+                print(f'Please enter a number between {min_value} and {max_value}.')
+        except ValueError:
+            print('Please enter a valid number.')
+
 class ScoreCalculator:
         
     def __init__(self):
@@ -6,24 +17,13 @@ class ScoreCalculator:
         
     def reset_score(self):
         self.score = {'correct position':0, 'wrong position':0}
-
-    def input_integer(self, prompt: str, min_value: int, max_value: int) -> int:
-        while True:
-            try:
-                value = int(input(prompt))
-                if min_value <= value <= max_value:
-                    return value
-                else:
-                    print(f'Please enter a number between {min_value} and {max_value}.')
-            except ValueError:
-                print('Please enter a valid number.')
         
     def input_score(self):
         self.score['correct position'] = \
-            self.input_integer('How many in the correct position? ', 0, 4)
+            input_integer('How many in the correct position? ', 0, 4)
         if not self.right_guess():
             self.score['wrong position'] = \
-                self.input_integer('How many in the wrong position? ', 0, 4)
+                input_integer('How many in the wrong position? ', 0, 4)
         
     def determine_score(self, guess, code) -> dict:          
         pairwise = zip(guess, code)

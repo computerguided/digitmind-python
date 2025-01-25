@@ -2,8 +2,8 @@ import random
 
 from score_calculators import *
 
-def create_combinations(difficulty_level) -> list:
-    digits = [1,2,3,4,5,6,7,8,9,0][:difficulty_level+3]
+def create_combinations(difficulty_level : int) -> list:
+    digits = list(range(difficulty_level + 3))
     return [(w,x,y,z)           \
         for w in digits         \
         for x in digits         \
@@ -35,12 +35,18 @@ def set_score_calculator() -> ScoreCalculator:
         return DifferenceScoreCalculator()
     
 def set_difficulty_level() -> int:
+    return input_integer("Give the difficulty level [1..7]: ", 1, 7)
+
+def input_guess(difficulty_level : int) -> list:
+    # Convert digits to strings for comparison
+    digit_chars = [str(i) for i in range(10)[:difficulty_level+3]]
     while True:
-        difficulty_level = input("Give the difficulty level [1..7]: ")
-        if difficulty_level.isdigit() and 1 <= int(difficulty_level) <= 7:
-            return int(difficulty_level)
-        else:
-            print("Please enter a valid number.")
+        input_string = input("Your next guess: ")
+        if len(input_string) == 4 \
+                and all(c in digit_chars for c in input_string) \
+                and len(set(input_string)) == 4:
+            return [int(c) for c in input_string]
+        print(f"Please enter a valid guess containing 4 different digits from {digit_chars}.")
 
 # Main program
 
@@ -57,7 +63,7 @@ code = random.choice(combinations)
 print("\nOk, I've chosen a code, try to guess it!\n")
 
 while not score_calculator.right_guess():
-    guess = [int(c) for c in input("Your next guess: ") ]
+    guess = input_guess(difficulty_level)
     score_calculator.score = score_calculator.determine_score(guess, code)
     print('Your score:', score_calculator.score)
 
