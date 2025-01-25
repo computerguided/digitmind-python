@@ -25,7 +25,7 @@ class ScoreCalculator:
             self.score['wrong position'] = \
                 input_integer('How many in the wrong position? ', 0, 4)
         
-    def determine_score(self, guess, code) -> dict:          
+    def determine_score(self, guess : list, code : list) -> dict:          
         pairwise = zip(guess, code)
         score = {'correct position':0, 'wrong position':0}            
         score['correct position'] = sum(1 for p in pairwise if p[0] == p[1])
@@ -35,7 +35,7 @@ class ScoreCalculator:
     def right_guess(self) -> bool:
         return self.score['correct position'] == 4
     
-    def process_score(self, combinations_left, guess):
+    def process_score(self, combinations_left : list, guess : list):
         max_index = len(combinations_left)-1
         for i, combination in enumerate(reversed(combinations_left)):
             if self.score != self.determine_score(combination, guess):
@@ -56,7 +56,7 @@ class DifferenceScoreCalculator(ScoreCalculator):
             print('Please enter a valid score.')
             self.input_score()
 
-    def determine_score(self, guess, code) -> int:
+    def determine_score(self, guess : list, code : list) -> int:
         return sum(abs(guess[i] - code[i]) for i in range(len(guess)))
 
     def right_guess(self) -> bool:

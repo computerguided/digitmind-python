@@ -13,7 +13,7 @@ def create_combinations(difficulty_level : int) -> list:
         and x not in (y,z)      \
         and y != z ]
 
-def do_computer_move(score_calculator, combinations_left, difficulty_level):
+def do_computer_move(score_calculator : ScoreCalculator, combinations_left : list, difficulty_level : int):
     
     # Input error handling
     if len(combinations_left) == 0:
