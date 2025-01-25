@@ -15,10 +15,11 @@ For Python I documented this process [here](design.pdf). As such this document c
 
 Focusing on core mechanics, the program uses the command line, so no GUI design rules were broken during this process…
 
-By the way - for convenience the final program is available on [GitHub](https://github.com/computerguided/digitmind-python).
+By the way - for convenience the final program is available on this repository ([`main.py`](main.py) and [`score_calculators.py`](score_calculators.py)).
 
-My goal with this document is also to give the novice Python programmer a fun introduction into some of the powerful features of the language.
+My goal with this is also to give the novice Python programmer a fun introduction into some of the powerful features of the language.
 
 *February 2025, Fred Dijkstra* 🤓
+
 
 
