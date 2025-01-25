@@ -2,7 +2,7 @@ import random
 
 from score_calculators import *
 
-def create_combinations(difficulty_level):
+def create_combinations(difficulty_level) -> list:
     digits = [1,2,3,4,5,6,7,8,9,0][:difficulty_level+3]
     return [(w,x,y,z)           \
         for w in digits         \
@@ -27,15 +27,20 @@ def do_computer_move(score_calculator, combinations_left, difficulty_level):
     score_calculator.input_score()
     score_calculator.process_score(combinations_left, guess)
 
-def set_score_calculator():
+def set_score_calculator() -> ScoreCalculator:
     # Instantiate score calculator
     if input("Specify the scoring type [p=position, d=difference]: ") == 'p':
         return ScoreCalculator()
     else:
         return DifferenceScoreCalculator()
     
-def set_difficulty_level():
-    return int(input("Give the difficulty level [1..7]: "))
+def set_difficulty_level() -> int:
+    while True:
+        difficulty_level = input("Give the difficulty level [1..7]: ")
+        if difficulty_level.isdigit() and 1 <= int(difficulty_level) <= 7:
+            return int(difficulty_level)
+        else:
+            print("Please enter a valid number.")
 
 # Main program
 
